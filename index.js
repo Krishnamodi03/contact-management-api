@@ -13,16 +13,7 @@ const mongoURI = process.env.MONGODB_URI;
 
 // CORS configuration
 app.use(cors({
-  origin: [
-    'http://localhost:3000', 
-    'http://localhost:3001', 
-    'http://localhost:5173', 
-    'http://localhost:4173', 
-    'http://127.0.0.1:5173', 
-    'http://127.0.0.1:3000',
-    'https://contact-management-api-krishnamodi03.vercel.app',
-    'https://*.vercel.app'
-  ],
+  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173', 'http://localhost:4173', 'http://127.0.0.1:5173', 'http://127.0.0.1:3000'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
