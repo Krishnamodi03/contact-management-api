@@ -10,6 +10,7 @@ A RESTful API built with Node.js, Express, and MongoDB for managing contact info
 - ✅ **Error Handling**: Standardized error responses for frontend integration
 - ✅ **CORS Support**: Configured for cross-origin requests
 - ✅ **MongoDB Integration**: Persistent data storage with MongoDB
+- ✅ **Vercel Deployment**: Ready for production deployment
 
 ## Tech Stack
 
@@ -17,10 +18,11 @@ A RESTful API built with Node.js, Express, and MongoDB for managing contact info
 - **Database**: MongoDB with Mongoose ODM
 - **Validation**: Mongoose schema validation
 - **CORS**: Cross-Origin Resource Sharing enabled
+- **Deployment**: Vercel
 
 ## API Endpoints
 
-### Base URL: `http://localhost:3000`
+### Base URL: `http://localhost:3000` (Development) / `https://your-app.vercel.app` (Production)
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -157,6 +159,52 @@ The project uses `nodemon` for development with automatic server restart on file
 
 ```bash
 npm start  # Starts the development server
+```
+
+## Deployment
+
+### Deploy to Vercel
+
+1. **Install Vercel CLI:**
+   ```bash
+   npm install -g vercel
+   ```
+
+2. **Login to Vercel:**
+   ```bash
+   vercel login
+   ```
+
+3. **Deploy:**
+   ```bash
+   vercel
+   ```
+
+4. **Set Environment Variables:**
+   - Go to your Vercel dashboard
+   - Navigate to your project settings
+   - Add environment variable: `MONGODB_URI` with your MongoDB connection string
+
+5. **Redeploy with environment variables:**
+   ```bash
+   vercel --prod
+   ```
+
+### Alternative: Deploy via GitHub Integration
+
+1. **Push your code to GitHub** (already done)
+2. **Connect Vercel to GitHub:**
+   - Go to [vercel.com](https://vercel.com)
+   - Click "New Project"
+   - Import your GitHub repository
+   - Configure environment variables
+   - Deploy
+
+### Environment Variables for Production
+
+Set these in your Vercel dashboard:
+```env
+MONGODB_URI=your_mongodb_connection_string
 ```
 
 ## License
